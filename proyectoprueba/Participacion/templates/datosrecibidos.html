@@ -1,17 +1,20 @@
 {% extends "base.html" %}
+{% load static %}
+
 
 {% block content %}
-    # Mensaje principal que confirma el registro exitoso del grupo #
-    <h1>Grupo Registrado Correctamente</h1>
-
-    # Sección donde se muestran los datos enviados desde el formulario #
+    <div class="contenedorDatosRecibidos">
+    <!--Mensaje principal que confirma el registro exitoso del grupo #-->
+    <h1 class="titulo">Grupo Registrado Correctamente</h1>
+        <div class="datos">
+    <!--Sección donde se muestran los datos enviados desde el formulario #-->
     <p><strong>Nombre del Equipo:</strong> {{ datos.nombreEquipo }}</p>
     <p><strong>Nombre del Líder:</strong> {{ datos.nombreJefe }}</p>
     <p><strong>Membresía:</strong> {{ datos.membresia }}</p>
-    <p><strong>Cantidad de Integrantes:</strong> {{ datos.cantidadIntegrantes }}</p>
-    {# Muestra el total calculado (por ejemplo, costo total o valor total del grupo) #}
-    <p><strong>Total: {{ datos.total }}</p>
+    <p><strong>Cantidad de Integrantes:</strong> {{ datos.cantidad }}</p>
+    <p><strong>Total: </strong>{{ datos.total }}</p>
+    </div>
     <br>
-    # Enlace para volver al formulario y registrar un nuevo equipo #
-    <a href="{% url 'formulario_participante' %}">Registrar otro equipo</a>
-{% endblock %}
+    <a href="{% url 'registro_equipo' %}">Registrar otro equipo</a>
+    </div>
+    {% endblock %}

@@ -32,5 +32,5 @@ urlpatterns = [
     #path('tabla_multi/<int:num>/',views.tabla_producto,name='tabla_product'),
     #path('formulario/',views.formulario_cliente, name='formulario_cliente'),
     #path('nuevo/',views.crear_cliente,name='crear_cliente'),
-    path('formulario_equipo/', views.registro_equipo, name='registrar_equipo')
+    path('formulario_equipo/', views.registro_equipo, name='registro_equipo')
 ]

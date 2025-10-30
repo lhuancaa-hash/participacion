@@ -5,19 +5,24 @@ def registro_equipo(request):
     if request.method == 'POST':
         form = EquipoForm(request.POST)
         if form.is_valid():
-            nomEquipo = form.cleaned_data['nomEquipo']
+            nombreEquipo = form.cleaned_data['nomEquipo']
             nombreJefe = form.cleaned_data['nombreJefe']
             membresia = form.cleaned_data['membresia']
             cantidad = form.cleaned_data['cantidad']
             total = membresia * cantidad
 
             datos = {
-                'nomEquipo': nomEquipo,
+                'nombreEquipo': nombreEquipo,
                 'nombreJefe': nombreJefe,
+                'membresia': membresia,
+                'cantidad': cantidad,
                 'total': total
             }
-            return render(request, 'Participacion/datosrecibidos.html', {'datos': datos})
+            return render(request, 'datosrecibidos.html', {'datos': datos})
+        else:
+            # Si el formulario no es válido, se immprimir errores en consola
+            print(form.errors)
     else:
         form = EquipoForm()
 
-    return render(request, 'Participacion/formulario.html', {'form': form})
+    return render(request, 'formulario.html', {'form': form})
