@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Registro de Equipo</h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <label>Nombre de Equipo</label>
+        <input type="text" name="nombreEquipo" required><br><br>
+        <label>Nombre del Líder</label>
+        <select name="nombreJefe" required>
+            <option value="">-- Seleccione un líder --</option>
+            <option value="Aguilar Machicado Nils Reiner">Aguilar Machicado Nils Reiner</option>
+            <option value="Aguirre Chuquimia Ana Camila">Aguirre Chuquimia Ana Camila</option>
+            <option value="Huanca Ancalle Lenny Daline">Huanca Ancalle Lenny Daline</option>
+            <option value="Serrano Mamani Raquel Araceli">Serrano Mamani Raquel Araceli</option>
+            <option value="Balboa Quispe Jhonathan Raul">Balboa Quispe Jhonathan Raul</option>
+        </select><br><br>
+        <label>Membresía</label>
+        <input type="number" name="membresia" required><br><br>
+        <label>Cantidad de Integrantes</label>
+        <input type="number" name="cantidadIntegrantes" required><br><br>
+        <button type="submit">Aceptar</button>
+        <button type="reset">Cancelar</button>
+    </form>
+{% endblock %}

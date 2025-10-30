@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Grupo Registrado Correctamente</h1>
+
+    <p><strong>Nombre del Equipo:</strong> {{ datos.nombreEquipo }}</p>
+    <p><strong>Nombre del Líder:</strong> {{ datos.nombreJefe }}</p>
+    <p><strong>Membresía:</strong> {{ datos.membresia }}</p>
+    <p><strong>Cantidad de Integrantes:</strong> {{ datos.cantidadIntegrantes }}</p>
+    <p><strong>Total: {{ datos.total }}</p>
+    <br>
+    <a href="{% url 'formulario_participante' %}">Registrar otro equipo</a>
+{% endblock %}
