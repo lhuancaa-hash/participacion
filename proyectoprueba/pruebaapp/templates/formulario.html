@@ -1,0 +1,33 @@
+{% extends "base.html" %} 
+
+{% block content %}
+
+    <h1>FORMULARIO REGISTRO CLIENTE</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="">Nombre</label>
+        <input type="text" name="nombre" id=""><br><br>
+        <label for="">Correo</label>
+        <input type="email" name="correo" id=""><br><br>
+        <label for="">Fecha de nacimiento</label>
+        <input type="number" name="anioNac" id=""><br><br>
+        <label for="">País</label>
+        <input type="text" name="pais" id="">
+        
+        <button type="submit">Enviar</button>
+        <button type="reset">Cancelar</button>
+    </form>
+    
+    {% if datos %}
+        <h2>DATOS RECIBIDOS</h2>
+        <p>Nombre:   {{ datos.nombre }}</p>
+        <p>Correo:   {{ datos.correo }}</p>
+        <p>Año de Nacimiento:   {{ datos.anioNac }}</p>
+        <p>Edad:   {{ datos.edad }}</p>
+        <p>Pais:   {{ datos.pais }}</p>
+    {% else %}
+        <h2>NO HAY DATOS</h2>
+    {% endif %}
+
+
+{% endblock %}

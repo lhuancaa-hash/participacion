@@ -1,0 +1,14 @@
+{% extends "base.html" %} 
+
+{% block content %}
+    <h1>EQUIPO REGISTRADO</h1>
+    {% if datos %}
+    nombre {{ datos.nombre }}
+    Correo {{ datos.correo }}
+    Año de Nacimiento {{ datos.anioNac }}
+    pais {{ datos.pais }}
+
+    {% endif %}
+    <a href={% url 'crear_cliente' %}>Registrar nuevo cliente</a>
+
+{% endblock %}

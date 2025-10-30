@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>TABLA DE MULTIPLICAR DEL {{ num }}</h1>
+<table border="1">
+{% for dato in lista %}
+<tr>
+    <td>{{ dato.i }} * {{ num }}</td>
+    <td>= {{ dato.res }}</td>
+</tr>
+{{ res }}
+{% endfor %}
+</table>
+
+{%endblock %}
