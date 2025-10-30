@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from pruebaapp import views
+from Participacion import views
 
 #A MANERA DE LIBRERIA
 urlpatterns = [
@@ -30,5 +31,6 @@ urlpatterns = [
     path('nuevo_saludo/<str:nombre>/<int:edad>/',views.nuevo_saludo, name='nuevo_saludo'),
     path('tabla_multi/<int:num>/',views.tabla_producto,name='tabla_product'),
     path('formulario/',views.formulario_cliente, name='formulario_cliente'),
-    path('nuevo/',views.crear_cliente,name='crear_cliente')
+    path('nuevo/',views.crear_cliente,name='crear_cliente'),
+    path('formulario_equipo/', views.registro_equipo, name='registrar_equipo')
 ]
