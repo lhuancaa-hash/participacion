@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
+ {# Formulario para registrar un nuevo equipo con sus datos principales #}
     <h1>Registro de Equipo</h1>
 
     <form action="" method="post">
         {% csrf_token %}
         <label>Nombre de Equipo</label>
         <input type="text" name="nombreEquipo" required><br><br>
+        {# Lista desplegable para seleccionar al líder del equipo #}
         <label>Nombre del Líder</label>
         <select name="nombreJefe" required>
             <option value="">-- Seleccione un líder --</option>
@@ -16,10 +18,13 @@
             <option value="Serrano Mamani Raquel Araceli">Serrano Mamani Raquel Araceli</option>
             <option value="Balboa Quispe Jhonathan Raul">Balboa Quispe Jhonathan Raul</option>
         </select><br><br>
+        {# Campo para ingresar el número de membresía del equipo #}
         <label>Membresía</label>
         <input type="number" name="membresia" required><br><br>
+        {# Campo para indicar la cantidad total de integrantes del equipo #}
         <label>Cantidad de Integrantes</label>
         <input type="number" name="cantidadIntegrantes" required><br><br>
+         {# Botones de acción del formulario #}
         <button type="submit">Aceptar</button>
         <button type="reset">Cancelar</button>
     </form>
